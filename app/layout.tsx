@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
+import { DeferredAnalytics } from "@/components/deferred-analytics";
 import "./globals.css";
 import Script from "next/script";
 
@@ -49,7 +49,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`}>
         {children}
-        <Analytics />
+        <DeferredAnalytics />
       </body>
     </html>
   );
