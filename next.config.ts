@@ -36,6 +36,8 @@ const nextConfig: NextConfig = {
       // React Email
       "@react-email/components",
       "@react-email/render",
+      // Theming
+      "next-themes",
       // Other utilities
       "date-fns",
       "recharts",

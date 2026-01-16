@@ -10,7 +10,9 @@ export type BlockType =
   | "divider"
   | "spacer"
   | "social-links"
-  | "footer";
+  | "footer"
+  | "list"
+  | "blockquote";
 
 export interface BaseBlock {
   id: string;
@@ -22,14 +24,16 @@ export interface HeadingBlock extends BaseBlock {
   content: JSONContent;
   level: 1 | 2 | 3;
   align: "left" | "center" | "right";
-  color: string;
+  /** Optional override - if not set, uses design system */
+  color?: string;
 }
 
 export interface TextBlock extends BaseBlock {
   type: "text";
   content: JSONContent;
   align: "left" | "center" | "right";
-  color: string;
+  /** Optional override - if not set, uses design system */
+  color?: string;
 }
 
 export interface ImageBlock extends BaseBlock {
@@ -45,9 +49,12 @@ export interface ButtonBlock extends BaseBlock {
   type: "button";
   text: string;
   url: string;
-  backgroundColor: string;
-  textColor: string;
-  borderRadius: number;
+  /** Optional override - if not set, uses design system */
+  backgroundColor?: string;
+  /** Optional override - if not set, uses design system */
+  textColor?: string;
+  /** Optional override - if not set, uses design system */
+  borderRadius?: number;
   align: "left" | "center" | "right";
 }
 
@@ -67,9 +74,12 @@ export interface ColumnsBlock extends BaseBlock {
 
 export interface DividerBlock extends BaseBlock {
   type: "divider";
-  color: string;
-  thickness: number;
-  style: "solid" | "dashed" | "dotted";
+  /** Optional override - if not set, uses design system */
+  color?: string;
+  /** Optional override - if not set, uses design system */
+  thickness?: number;
+  /** Optional override - if not set, uses design system */
+  style?: "solid" | "dashed" | "dotted";
 }
 
 export interface SpacerBlock extends BaseBlock {
@@ -93,7 +103,23 @@ export interface FooterBlock extends BaseBlock {
   type: "footer";
   content: JSONContent;
   align: "left" | "center" | "right";
-  color: string;
+  /** Optional override - if not set, uses design system */
+  color?: string;
+}
+
+export interface ListBlock extends BaseBlock {
+  type: "list";
+  content: JSONContent;
+  listType: "bullet" | "ordered";
+  /** Optional override - if not set, uses design system */
+  color?: string;
+}
+
+export interface BlockquoteBlock extends BaseBlock {
+  type: "blockquote";
+  content: JSONContent;
+  /** Optional override - if not set, uses design system */
+  color?: string;
 }
 
 export type EmailBlock =
@@ -106,11 +132,15 @@ export type EmailBlock =
   | DividerBlock
   | SpacerBlock
   | SocialLinksBlock
-  | FooterBlock;
+  | FooterBlock
+  | ListBlock
+  | BlockquoteBlock;
 
 export interface EmailDocument {
   name: string;
   blocks: EmailBlock[];
+  /** ID of the active design system, if any */
+  designSystemId?: string;
   settings: {
     backgroundColor: string;
     contentWidth: number;
