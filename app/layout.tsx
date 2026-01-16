@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Script from "next/script";
 
@@ -37,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {process.env.NODE_ENV === "development" && (
           <Script
@@ -48,8 +49,10 @@ export default function RootLayout({
         )}
       </head>
       <body className={`font-sans antialiased`}>
-        {children}
-        <DeferredAnalytics />
+        <ThemeProvider>
+          {children}
+          <DeferredAnalytics />
+        </ThemeProvider>
       </body>
     </html>
   );
